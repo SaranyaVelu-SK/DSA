@@ -1,5 +1,5 @@
 # DSA using JavaScript
-This repository contains my learning journey of **Data Structures and Algorithms (DSA)** using **JavaScript**.  
+This repository contains my learning journey of **Data Structures and Algorithms (DSA)** using **JavaScript** from [NamasteDev.com](https://namastedev.com/).  
 I'm solving problems regularly to strengthen my problem-solving skills.
 
 ---
