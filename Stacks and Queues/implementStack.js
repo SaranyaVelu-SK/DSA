@@ -4,17 +4,10 @@ var MyStack = function() {
     this.q2 = [];
 };
 
-/** 
- * @param {number} x
- * @return {void}
- */
 MyStack.prototype.push = function(x) {
     this.q1.push(x)
 };
 
-/**
- * @return {number}
- */
 MyStack.prototype.pop = function() {
     let n = this.q1.length;
     for(let i=0;i<n-1;i++){
@@ -27,9 +20,6 @@ MyStack.prototype.pop = function() {
     return ans
 };
 
-/**
- * @return {number}
- */
 MyStack.prototype.top = function() {
     let n= this.q1.length;
     for(let i=0;i<n-1;i++){
@@ -44,9 +34,38 @@ MyStack.prototype.top = function() {
     return ans
 };
 
-/**
- * @return {boolean}
- */
 MyStack.prototype.empty = function() {
     return this.q1.length===0;
+};
+
+//Implement stacj using one queue
+var MyStack = function() {
+    this.q = [];
+};
+
+MyStack.prototype.push = function(x) {
+    this.q.push(x)
+};
+
+MyStack.prototype.pop = function() {
+    let n = this.q.length;
+    for(let i=0;i<n-1;i++){
+        this.q.push(this.q.shift())
+    }
+    let ans = this.q.shift();
+    return ans
+};
+
+MyStack.prototype.top = function() {
+    let n= this.q.length;
+    for(let i=0;i<n-1;i++){
+        this.q.push(this.q.shift());
+    }
+    let ans = this.q.shift();
+    this.q.push(ans);
+    return ans
+};
+
+MyStack.prototype.empty = function() {
+    return this.q.length===0;
 };
