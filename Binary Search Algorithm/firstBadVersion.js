@@ -1,0 +1,20 @@
+var solution = function(isBadVersion) {
+    /**
+     * @param {integer} n Total versions
+     * @return {integer} The first bad version
+     */
+    return function(n) {
+        let l=1;
+        let r = n;
+        let m;
+        while(l<r){
+            m = l+Math.floor((r-l)/2);
+            if(!isBadVersion(m)){
+                l=m+1;
+            }else{
+                r=m;
+            }
+        }
+        return r;
+    };
+};
