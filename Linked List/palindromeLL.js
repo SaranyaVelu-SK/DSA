@@ -25,3 +25,21 @@ function isPalindromeLL (head){
     }
     return true;
 }
+
+//brute
+function isPalindromeLL(head){
+    let stack =[];
+    let temp =head;
+    while(temp){
+        stack.push(temp.val);
+        temp=temp.next;
+    }
+    temp=head;
+    while(temp){
+        if(temp.val!==stack.pop()){
+            return false
+        }
+        temp =temp.next
+    }
+    return true;
+}

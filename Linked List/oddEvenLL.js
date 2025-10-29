@@ -17,3 +17,32 @@ function oddEvenLL(head){
     odd.next = connecter;
     return head;
 }
+
+//brute
+var oddEvenList = function(head) {
+    if(!head || !head.next) return head;
+    let arr=[];
+
+    let temp =head;
+    while(temp && temp.next){
+        arr.push(temp.val);
+        temp=temp.next.next;
+    }
+    if(temp){arr.push(temp.val)};
+
+    temp =head.next;
+    while(temp && temp.next){
+        arr.push(temp.val);
+        temp=temp.next.next;
+    }
+    if(temp){arr.push(temp.val)};
+
+    let i=0;
+    temp=head;
+    while(temp){
+        temp.val = arr[i];
+        i++;
+        temp=temp.next
+    }
+    return head;
+};
